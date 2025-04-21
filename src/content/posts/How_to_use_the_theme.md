@@ -3,7 +3,11 @@ title: How to Use the Theme
 description: A comprehensive guide on how to use and customize the Adu Blog theme
 pubDate: 2024-04-21
 author: duchengbin-cg
-type: guide
+type: post
+tags:
+    - guide
+    - documentation
+    - theme
 ---
 
 # How to Use the Theme
