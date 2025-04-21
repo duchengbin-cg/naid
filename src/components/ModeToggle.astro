@@ -14,27 +14,19 @@ if (modes.indexOf(activeMode as string) === -1) {
     <span class="dark:block light:hidden">🌙</span>
 </button>
 <script>
-    const toggle = () => {
-        let currentMode = Astro.cookies.get('mode')?.value;
-        let nextMode = currentMode === 'light' ? 'dark' : 'light';
-        const toggles = document.querySelectorAll('[data-c="modeToggle"]');
-        if (!currentMode) {
-            toggles.forEach(el => (el.classList.remove('dark'), el.classList.add('light')));
-            Astro.cookies.set('mode', 'light');
-            currentMode = 'light';
-        } else {
-            
-            Astro.cookies.set('mode', currentMode === 'light' ? 'dark' : 'light');
-            // toggles.forEach()
-        }
-    }
-    
     document.addEventListener('click', ({ target }) => {
         const btn = (target as HTMLElement).closest('[data-c="modeToggle"]');
         if (!btn) return;
 
-        btn.classList.toggle('light', !btn.classList.contains('light'));
-        btn.classList.toggle('dark', !btn.classList.contains('dark'));
-        // Astro.cookies.set('mode',)
-    })
+        const currentMode = btn.classList.contains('light') ? 'light' : 'dark';
+        const nextMode = currentMode === 'light' ? 'dark' : 'light';
+
+        btn.classList.toggle('light');
+        btn.classList.toggle('dark');
+        
+        document.documentElement.classList.toggle('light');
+        document.documentElement.classList.toggle('dark');
+        
+        document.cookie = `mode=${nextMode}; path=/; max-age=31536000`; // 1 year
+    });
 </script>
