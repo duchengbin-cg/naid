@@ -1,77 +1,71 @@
 ---
-layout: ../layouts/AboutLayout.astro
+layout: AboutLayout
+title: About
 ---
 
-Firstly, thank you for checking this template out. This is the end of a weekend long project to learn more about utility CSS frameworks and Astro templates. The template is inspired by the website for [voidzero.dev](https://voidzero.dev), and it will look very similar. The main goal in creating this template was to recreate the look of their site but using only Uno CSS. Outside of a few exceptions, that goal was accomplished.
+## About Adu Blog
 
-The secondary goal of this template was to be something a developer could pick up and edit to fit their needs easily. It stays as close to Astro practices as possible, doesn't include unnecessary plugins or build processes. If you build sites with Astro and use any of the official templates as a base, this should be familiar to work in.
+Adu Blog is a technical blog focused on Computer Graphics and Visual Technologies. Our mission is to transform complex technical knowledge into actionable industry solutions.
 
-## The exceptions
+### Our Expertise
 
-Let's go over the shortcuts that have been created.
+- Technical Art
+- Shaders
+- Visual Effects (VFX)
+- Pipeline Development
+- Computer Graphics Programming
 
-- `.wrapper` &mdash; Used as the `.container` for the template.
-- `.title` &mdash; Used for most section titles.
-- `.project-title` &mdash; Used for grid item titles.
-- `.subtitle` &mdash; Used for section subtitles. Similar to adding `small.text-muted` when using Bootstrap
-- `.small` &mdash; Used for accessory text, such as the "source" found on the sections on the home page.
-- `.subtitle-small` &mdash; A smaller variant of the `.subtitle` class.
-- `.project-list` &mdash; The grid set up for the project grid.
-- `.section--index` &mdash; Used for the number index when adding the `index` prop to the `<Section>` component, e.g. `<Section index>`
-- `.section--source` &mdash; Used for the accessory text when adding the `source` prop to the `<Section>` component, e.g. `<Section source="fake-file-name.md">`
-- `.investor--label` &mdash; Used to label each level of investors.
+### Contact
 
-### The inline styles
+For any inquiries or collaborations, please reach out to us through our GitHub repository.
 
-In a few places the choice was made to write CSS instead of inducing a concussion on the developer. These are mainly global styles, such as `.content-wrapper` which can be found on this page. `.content-wrapper` adds the necessary styles to the generated heading and paragraph elements. You can also find `.ignore-content-container` and `.inherit-content-container` which is used to manage spacing of descendant elements of the `<Section>` component.
+## About Me
 
-```html
-<Section>
-    <h2>This element should have some inline padding</h2>
-    <ul class="inherit-content-container">
-        <li>But the if the <code>&gt;ul></code> element was give padding</li>
-        <li>It would mess with the padding on the <code>&gt;li></code> element</li>
-        <li><code>.inherit-content-container</code> passes the padding on to the child of the element with the class.
-    </ul>
-    <!-- 
-        Or if your component already manages 
-        it's own padding, we can ignore it entirely
-    -->
-    <ComponentWithPadding class="ignore-content-padding" />
-</Section>
-```
+阿杜，Adu
+视觉效果领域和电影行业有着近10年的工作经验，主要关注CGI及后期制作。参与过众多电影、电视剧、广告TVC、动画和游戏CG项目。曾任灯光组长，技术总监，CG总监等职位。
+于2021年转入游戏行业，负责游戏研发的美术相关工作，现就职于腾讯天美工作室。
 
-## Content Collections
+## Production Toolset
 
-If you aren't using Content Collections, you should be. They're a wonderful way to make sure the content/data you're writing is inline with all the other content on your site. It's also a great way to organize data that is tangential, such as authors or related projects.
+| 3D Applications      | Rendering Engines |Real-time Engines |Compositing Tools |Creative Suite | Pipeline Tools     |
+| :---        |    :----:   |    :----:  |   :----:   |    :----:  |          ---: |
+| Header      | Title       | Here's this|            |            |               |
+| Paragraph   | Text        | And more   |            |            |               |
+| Paragraph   | Text        | And more   |            |            |               |
+| Paragraph   | Text        | And more   |            |            |               |
+| Paragraph   | Text        | And more   |            |            |               |
+| Paragraph   | Text        | And more   |            |            |               |
+| Paragraph   | Text        | And more   |            |            |               |
+| Paragraph   | Text        | And more   |            |            |               |
+| Paragraph   | Text        | And more   |            |            |               |
+| Paragraph   | Text        | And more   |            |            |               |
 
-The included collections are:
 
-- authors &mdash; Each author get's their own `.json` file that can be referenced.
-- posts &mdash; Markdown files should go here, with frontmatter matching the collection schema
-- investors &mdash; This is a single entry collection, but could be converted to multiple entry fairly easily.
-- projects &mdash; This is a multi entry collection, each project gets it's own `.json` file
-- stats &mdash; This is a multi entry collection, use the `<StatsGrid entryName={entryIdentifier}>` component to generate a grid based on the data in the matching `.json` file.
 
-If you wanted a page for all the stats in the collection, it would hypothetically look like this:
+## Get in Touch
+- QQ/E-Mail：909173767@qq.com
+- 闲聊QQ群：119592197
+- Github：https://github.com/duchengbin-cg
+- Wechat：Adu_CG
 
-```astro
----
-import { getCollection } from 'astro:content';
-const stats = await getCollection('stats');
----
-<main>
-    <Section>
-        <h2>Want to learn more about all the incredible data we have?</h2>
-    </Section>
-    {stats.map(({ id }) => <StatsGrid entryName={id} />)}
-</main>
-```
 
-## Other tech used
+## About This Site
+本站创建于2016年7月16日，致力于分享计算机图形学（Computer Graphics）与可视化技术（Visual Technologies）领域的专业知识和深度见解。内容涵盖技术研究、行业动态、个人实践心得等多个维度。
 
-As mentioned at the start, this template is styled with [Uno CSS](https://unocss.dev/). It is a utility first framework, with presets that can turn it into anything you want it to.
+作为一个技术分享博客，我希望通过专业的内容建设，连接志同道合的行业伙伴，促进技术交流与经验分享。
 
-## FAQ
+Established on July 16, 2016, this platform is dedicated to sharing professional insights and knowledge in Computer Graphics and Visual Technologies. Our content encompasses technical research, industry trends, and practical experience in the field.
 
-None yet! If you have questions or issues, feel free to reach out in an issue or discussion on [GitHub](https://github.com/studiolumina/naid).
+As a technical sharing platform, we aim to connect with industry professionals, facilitate meaningful exchanges, and contribute to the advancement and innovation of CG technology through high-quality content.
+
+
+
+## Technical Stack:
+
+• Operating System: Linux
+
+• Version Control: GitHub
+
+• Deployment: Netlify
+
+• Framework: Astro
